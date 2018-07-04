@@ -46,8 +46,17 @@ Items can contain placeholders like:
 - `${Name:value}` (default text is "value"),
 - `${Name:value1,value2,value3}` (default text is "value1"; allows to select from multiple values),
 - `${Name:\n}` (multi-line text field).
+- `${date_Name:format}` (placeholder starting with `date_` will use `format` as a date format, see below)
 
-When such snippet is selected, user is prompted to replace these placeholders with custom content.
+If the placeholder name starts with 'date_', the default text is interpreted according to dateString(default text).
+
+For example, a snippet defined as:
+${date_y:yyyy}-${date_m:MM}-${date_d:dd}
+
+Will render as (for example):
+2018-07-02
+
+When such snippet is selected, user is prompted to replace these placeholders with custom content. Date values are evaluated, but can still be modified before inserting.
 
 ### [Capitalize Selected Text for Titles](to-title-case.ini)
 
